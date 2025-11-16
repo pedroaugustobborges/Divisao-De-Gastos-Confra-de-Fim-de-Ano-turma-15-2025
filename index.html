@@ -11,18 +11,18 @@
             line-height: 1.6;
             background-color: #f9f9f9;
             margin: 0;
-            padding: 20px;
+            padding: 10px; /* Reduzido para telas pequenas */
         }
 
         /* Container Principal */
         .container {
             max-width: 850px;
-            margin: 20px auto;
+            margin: 10px auto;
             background-color: #ffffff;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 30px;
+            padding: 20px; /* Reduzido */
         }
 
         /* Cabeçalhos */
@@ -37,6 +37,7 @@
             border-bottom: 2px solid #eee;
             padding-bottom: 15px;
             margin-bottom: 20px;
+            font-size: 1.8em;
         }
         
         h2 {
@@ -44,13 +45,21 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
             margin-top: 30px;
+            font-size: 1.4em;
         }
 
+        /* --- NOVO: Wrapper da Tabela para Responsividade --- */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 25px;
+            -webkit-overflow-scrolling: touch; /* Melhora scroll em iOS */
+        }
+        
         /* Tabela de Despesas */
         .expense-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 25px;
+            min-width: 500px; /* Evita que a tabela fique muito espremida */
         }
 
         .expense-table th,
@@ -66,12 +75,17 @@
             font-weight: 600;
         }
 
-        /* Alinhamento de valores */
+        /* Coluna Valor */
         .expense-table td:nth-child(2) {
             text-align: right;
             font-weight: 500;
             font-family: "Courier New", Courier, monospace;
             white-space: nowrap;
+        }
+
+        /* --- ATUALIZADO: Coluna Comprovantes (Centralizada) --- */
+        .expense-table td:nth-child(3) {
+            text-align: center;
         }
         
         /* Botões de Download */
@@ -97,7 +111,7 @@
             background-color: #f4f6f8;
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 25px;
+            padding: 20px; /* Reduzido */
             margin-top: 20px;
             text-align: center;
         }
@@ -114,15 +128,15 @@
         }
 
         .summary-box .total-value {
-            font-size: 1.8em;
+            font-size: 1.6em; /* Ajustado */
             font-weight: 700;
-            color: #d9534f; /* Vermelho para despesa total */
+            color: #d9534f;
         }
 
         .summary-box .per-person-value {
-            font-size: 1.8em;
+            font-size: 1.6em; /* Ajustado */
             font-weight: 700;
-            color: #5cb85c; /* Verde para valor dividido */
+            color: #5cb85c;
         }
         
         /* Estilo da Chave Pix */
@@ -133,14 +147,14 @@
         }
 
         .pix-info .pix-key {
-            font-size: 1.4em;
+            font-size: 1.25em; /* Ajustado */
             font-weight: 600;
             color: #333;
             margin: 5px 0 0 0;
-            /* Estilo para facilitar seleção/cópia */
             user-select: all; 
             -webkit-user-select: all;
             -moz-user-select: all;
+            word-break: break-all; /* Garante quebra em telas pequenas */
         }
         
         /* Lista de Participantes */
@@ -152,6 +166,28 @@
             margin-bottom: 5px;
         }
 
+        /* --- NOVO: Media Query para telas maiores --- */
+        @media (min-width: 600px) {
+            body {
+                padding: 20px;
+            }
+            .container {
+                padding: 30px;
+                margin: 20px auto;
+            }
+            .summary-box {
+                padding: 25px;
+            }
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.5em; }
+            .summary-box .total-value,
+            .summary-box .per-person-value {
+                font-size: 1.8em;
+            }
+            .pix-info .pix-key {
+                font-size: 1.4em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -161,62 +197,63 @@
         <p><strong>Evento:</strong> Confraternização da Turma XV - Mestrado em Saúde Coletiva</p>
 
         <h2>Detalhamento das Despesas</h2>
-        <table class="expense-table">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Valor (R$)</th>
-                    <th>Comprovante(s)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Supermercado (compras gerais)</td>
-                    <td>R$&nbsp;749,58</td>
-                    <td><a href="conta1.jpeg" download class="download-link">Baixar (conta1.jpeg)</a></td>
-                </tr>
-                <tr>
-                    <td>Aluguel (pratos, taças, talheres, mesas, cadeiras)</td>
-                    <td>R$&nbsp;316,00</td>
-                    <td><a href="conta2.jpeg" download class="download-link">Baixar (conta2.jpeg)</a></td>
-                </tr>
-                <tr>
-                    <td>Cozinheira (Ilidia)</td>
-                    <td>R$&nbsp;200,00</td>
-                    <td><a href="conta3.jpeg" download class="download-link">Baixar (conta3.jpeg)</a></td>
-                </tr>
-                <tr>
-                    <td>Doces, descartáveis e enfeites (R$ 101,42 + R$ 24,99)</td>
-                    <td>R$&nbsp;126,41</td>
-                    <td>
-                        <a href="conta4.jpeg" download class="download-link">Baixar (conta4.jpeg)</a>
-                        <a href="conta5.jpeg" download class="download-link">Baixar (conta5.jpeg)</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Gelo</td>
-                    <td>R$&nbsp;31,00</td>
-                    <td><a href="conta6.jpeg" download class="download-link">Baixar (conta6.jpeg)</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="summary-box">
+        
+        <div class="table-wrapper">
+            <table class="expense-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Valor (R$)</th>
+                        <th>Comprovante(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Supermercado (compras gerais)</td>
+                        <td>R$&nbsp;749,58</td>
+                        <td><a href="conta1.jpeg" download class="download-link">Baixar (conta1.jpeg)</a></td>
+                    </tr>
+                    <tr>
+                        <td>Aluguel (pratos, taças, talheres, mesas, cadeiras)</td>
+                        <td>R$&nbsp;316,00</td>
+                        <td><a href="conta2.jpeg" download class="download-link">Baixar (conta2.jpeg)</a></td>
+                    </tr>
+                    <tr>
+                        <td>Cozinheira (Ilidia)</td>
+                        <td>R$&nbsp;200,00</td>
+                        <td><a href="conta3.jpeg" download class="download-link">Baixar (conta3.jpeg)</a></td>
+                    </tr>
+                    <tr>
+                        <td>Doces, descartáveis e enfeites (R$ 101,42 + R$ 24,99)</td>
+                        <td>R$&nbsp;126,41</td>
+                        <td>
+                            <a href="conta4.jpeg" download class="download-link">Baixar (conta4.jpeg)</a>
+                            <a href="conta5.jpeg" download class="download-link">Baixar (conta5.jpeg)</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gelo</td>
+                        <td>R$&nbsp;31,00</td>
+                        <td><a href="conta6.jpeg" download class="download-link">Baixar (conta6.jpeg)</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> <div class="summary-box">
             <p class="total-label">Total Geral das Despesas</p>
             <p class="total-value">R$&nbsp;1.422,99</p>
             
-            <p style="margin-top: 20px;">Divisão entre <strong>27</strong> participantes</p>
+            <p style="margin-top: 20px;">Divisão entre <strong>26</strong> participantes</p>
 
             <p class="total-label">Valor por Pessoa</p>
-            <p class="per-person-value">R$&nbsp;52,70</p>
+            <p class="per-person-value">R$&nbsp;54,73</p>
 
             <div class="pix-info">
                 <p class="total-label" style="font-size: 1.1em; margin-bottom: 5px;">Para Pagamento:</p>
                 <p class="pix-key">Chave Pix: 62993013303</p>
             </div>
-            </div>
+        </div>
 
-        <h2>Lista de Participantes (27)</h2>
+        <h2>Lista de Participantes (26)</h2>
         <ol class="guest-list">
             <li>Matheus Gomes Ferreira</li>
             <li>Pablo Ferreira Lemes de Brito</li>
@@ -232,8 +269,7 @@
             <li>Pandora Gomes Borges</li>
             <li>Fernanda Costa Nunes</li>
             <li>Ricardo Caetano Nunes</li>
-            <li>Jessica de Andrade</li>
-            <li>Sofia Caetano Nunes</li>
+            <li>Patrícia Melgaço</li>
             <li>Felipe Soares de Souza</li>
             <li>Naianny Jonas Fogaca</li>
             <li>Dario Wellinger</li>
@@ -251,4 +287,3 @@
 
 </body>
 </html>
-
