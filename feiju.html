@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestação de Contas - Confraternização Saúde Coletiva</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+
+        /* Cabeçalhos */
+        h1, h2, h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #34495e;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        /* Tabela de Despesas */
+        .expense-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .expense-table th,
+        .expense-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .expense-table th {
+            background-color: #f4f6f8;
+            font-weight: 600;
+        }
+
+        /* Alinhamento de valores */
+        .expense-table td:nth-child(2) {
+            text-align: right;
+            font-weight: 500;
+            font-family: "Courier New", Courier, monospace;
+            white-space: nowrap;
+        }
+        
+        /* Botões de Download */
+        .download-link {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .download-link:hover {
+            background-color: #0056b3;
+        }
+
+        /* Seção de Resumo (Totais) */
+        .summary-box {
+            background-color: #f4f6f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .summary-box p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .summary-box .total-label {
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        .summary-box .total-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #d9534f; /* Vermelho para despesa total */
+        }
+
+        .summary-box .per-person-value {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #5cb85c; /* Verde para valor dividido */
+        }
+        
+        /* Lista de Participantes */
+        .guest-list {
+            padding-left: 20px;
+        }
+        
+        .guest-list li {
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Prestação de Contas</h1>
+        <p><strong>Evento:</strong> Confraternização da Turma XV - Mestrado em Saúde Coletiva</p>
+
+        <h2>Detalhamento das Despesas</h2>
+        <table class="expense-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Valor (R$)</th>
+                    <th>Comprovante(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Supermercado (compras gerais)</td>
+                    <td>R$&nbsp;749,58</td>
+                    <td><a href="conta1.jpeg" download class="download-link">Baixar (conta1.jpeg)</a></td>
+                </tr>
+                <tr>
+                    <td>Aluguel (pratos, taças, talheres, mesas, cadeiras)</td>
+                    <td>R$&nbsp;316,00</td>
+                    <td><a href="conta2.jpeg" download class="download-link">Baixar (conta2.jpeg)</a></td>
+                </tr>
+                <tr>
+                    <td>Cozinheira (Ilidia)</td>
+                    <td>R$&nbsp;200,00</td>
+                    <td><a href="conta3.jpeg" download class="download-link">Baixar (conta3.jpeg)</a></td>
+                </tr>
+                <tr>
+                    <td>Doces, descartáveis e enfeites (R$ 101,42 + R$ 24,99)</td>
+                    <td>R$&nbsp;126,41</td>
+                    <td>
+                        <a href="conta4.jpeg" download class="download-link">Baixar (conta4.jpeg)</a>
+                        <a href="conta5.jpeg" download class="download-link">Baixar (conta5.jpeg)</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            <p class="total-label">Total Geral das Despesas</p>
+            <p class="total-value">R$&nbsp;1.391,99</p>
+            
+            <p style="margin-top: 20px;">Divisão entre <strong>28</strong> participantes</p>
+
+            <p class="total-label">Valor por Pessoa</p>
+            <p class="per-person-value">R$&nbsp;49,71</p>
+        </div>
+
+        <h2>Lista de Participantes (28)</h2>
+        <ol class="guest-list">
+            <li>Marcos Vinícius Rodrigues de Melo</li>
+            <li>Raul Martins Silva</li>
+            <li>Matheus Gomes Ferreira</li>
+            <li>Pablo Ferreira Lemes de Brito</li>
+            <li>Joyce Souza dos Santos</li>
+            <li>Karla Francisca de Araújo Guimarães</li>
+            <li>Mirley Winny Ribeiro Teodoro</li>
+            <li>Leonardo Santos Martins</li>
+            <li>Marly Maria de Oliveira</li>
+            <li>Fábio Campos Alves Cordeiro</li>
+            <li>Isabella de Oliveira Souza</li>
+            <li>Nathana Helloara Vieira Lopes</li>
+            <li>Márcio Polveiro</li>
+            <li>Patrícia Cruz</li>
+            <li>Pandora Gomes Borges</li>
+            <li>Fernanda Costa Nunes</li>
+            <li>Ricardo Caetano Nunes</li>
+            <li>Patrícia Melgaço</li>
+            <li>Sofia Caetano Nunes</li>
+            <li>Felipe Soares de Souza</li>
+            <li>Naianny Jonas Fogaca</li>
+            <li>Dario Wellinger</li>
+            <li>Mariana Rocha de Carvalho</li>
+            <li>Nilza A. M. Almeida</li>
+            <li>Rogério A. Almeida</li>
+            <li>Mariana M. Almeida</li>
+            <li>Lorena Nunes Mota</li>
+            <li>Francisco José Rodrigues da Silva</li>
+        </ol>
+
+    </div>
+
+</body>
+</html>
