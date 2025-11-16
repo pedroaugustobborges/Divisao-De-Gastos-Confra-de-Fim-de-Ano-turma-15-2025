@@ -11,7 +11,7 @@
             line-height: 1.6;
             background-color: #f9f9f9;
             margin: 0;
-            padding: 10px; /* Reduzido para telas pequenas */
+            padding: 10px;
         }
 
         /* Container Principal */
@@ -22,7 +22,7 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            padding: 20px; /* Reduzido */
+            padding: 20px;
         }
 
         /* Cabeçalhos */
@@ -48,18 +48,18 @@
             font-size: 1.4em;
         }
 
-        /* --- NOVO: Wrapper da Tabela para Responsividade --- */
+        /* Wrapper da Tabela para Responsividade */
         .table-wrapper {
             overflow-x: auto;
             margin-bottom: 25px;
-            -webkit-overflow-scrolling: touch; /* Melhora scroll em iOS */
+            -webkit-overflow-scrolling: touch;
         }
         
         /* Tabela de Despesas */
         .expense-table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 500px; /* Evita que a tabela fique muito espremida */
+            min-width: 500px; 
         }
 
         .expense-table th,
@@ -83,7 +83,7 @@
             white-space: nowrap;
         }
 
-        /* --- ATUALIZADO: Coluna Comprovantes (Centralizada) --- */
+        /* Coluna Comprovantes (Centralizada) */
         .expense-table td:nth-child(3) {
             text-align: center;
         }
@@ -111,7 +111,7 @@
             background-color: #f4f6f8;
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 20px; /* Reduzido */
+            padding: 20px;
             margin-top: 20px;
             text-align: center;
         }
@@ -128,13 +128,13 @@
         }
 
         .summary-box .total-value {
-            font-size: 1.6em; /* Ajustado */
+            font-size: 1.6em;
             font-weight: 700;
             color: #d9534f;
         }
 
         .summary-box .per-person-value {
-            font-size: 1.6em; /* Ajustado */
+            font-size: 1.6em;
             font-weight: 700;
             color: #5cb85c;
         }
@@ -147,14 +147,14 @@
         }
 
         .pix-info .pix-key {
-            font-size: 1.25em; /* Ajustado */
+            font-size: 1.25em;
             font-weight: 600;
             color: #333;
             margin: 5px 0 0 0;
             user-select: all; 
             -webkit-user-select: all;
             -moz-user-select: all;
-            word-break: break-all; /* Garante quebra em telas pequenas */
+            word-break: break-all;
         }
         
         /* Lista de Participantes */
@@ -166,7 +166,7 @@
             margin-bottom: 5px;
         }
 
-        /* --- NOVO: Media Query para telas maiores --- */
+        /* Media Query para telas maiores */
         @media (min-width: 600px) {
             body {
                 padding: 20px;
@@ -236,16 +236,21 @@
                         <td>R$&nbsp;31,00</td>
                         <td><a href="conta6.jpeg" download class="download-link">Baixar (conta6.jpeg)</a></td>
                     </tr>
+                    <tr>
+                        <td>Ingredientes (bolo e sobremesas) (R$ 42,24 + R$ 43,66)</td>
+                        <td>R$&nbsp;85,90</td>
+                        <td><a href="conta7.jpg" download class="download-link">Baixar (conta7.jpg)</a></td>
+                    </tr>
                 </tbody>
             </table>
         </div> <div class="summary-box">
             <p class="total-label">Total Geral das Despesas</p>
-            <p class="total-value">R$&nbsp;1.422,99</p>
+            <p class="total-value">R$&nbsp;1.508,89</p>
             
-            <p style="margin-top: 20px;">Divisão entre <strong>26</strong> participantes</p>
+            <p style="margin-top: 20px;">Divisão entre <strong>27</strong> participantes</p>
 
             <p class="total-label">Valor por Pessoa</p>
-            <p class="per-person-value">R$&nbsp;54,73</p>
+            <p class="per-person-value">R$&nbsp;55,88</p>
 
             <div class="pix-info">
                 <p class="total-label" style="font-size: 1.1em; margin-bottom: 5px;">Para Pagamento:</p>
@@ -253,7 +258,7 @@
             </div>
         </div>
 
-        <h2>Lista de Participantes (26)</h2>
+        <h2>Lista de Participantes (27)</h2>
         <ol class="guest-list">
             <li>Matheus Gomes Ferreira</li>
             <li>Pablo Ferreira Lemes de Brito</li>
@@ -268,8 +273,8 @@
             <li>Patrícia Cruz</li>
             <li>Pandora Gomes Borges</li>
             <li>Fernanda Costa Nunes</li>
-            <li>Larissa Arbues Carneiro</li>
-            <li>Jessica de Andrade</li>
+            <li>Ricardo Caetano Nunes</li>
+            <li>Patrícia Melgaço</li>
             <li>Felipe Soares de Souza</li>
             <li>Naianny Jonas Fogaca</li>
             <li>Dario Wellinger</li>
@@ -279,6 +284,7 @@
             <li>Mariana M. Almeida</li>
             <li>Lorena Nunes Mota</li>
             <li>Francisco José Rodrigues da Silva</li>
+            <li>Larissy Barbosa Borges</li> 
             <li>Thaís Rocha Assis</li>
             <li>Marido da Thaís Rocha Assis</li>
         </ol>
@@ -287,4 +293,3 @@
 
 </body>
 </html>
-
